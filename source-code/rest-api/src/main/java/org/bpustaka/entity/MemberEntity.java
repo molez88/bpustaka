@@ -1,6 +1,6 @@
 package org.bpustaka.entity;
 
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -127,13 +127,22 @@ public class MemberEntity {
         this.mobile_no = mobile_no;
     }
 
-    public String getDateofbirth() {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Date getDateofbirth() {
         return dateofbirth;
     }
 
-    public void setDateofbirth(String dateofbirth) {
+    public void setDateofbirth(Date dateofbirth) {
         this.dateofbirth = dateofbirth;
     }
+
 
     public String getPicture() {
         return picture;
