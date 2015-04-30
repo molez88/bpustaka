@@ -1,5 +1,6 @@
 package org.bpustaka.entity;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,13 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity @Table(name="member")
 public class MemberEntity {
 
-    @Id
+    @Id 
     @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
     
     @NotNull @NotEmpty @Size(min = 4)
@@ -50,7 +53,7 @@ public class MemberEntity {
     
     @NotNull @NotEmpty 
     @Column(name="dateofbirth", unique = true, nullable = false)
-    private String dateofbirth;
+    private Date dateofbirth;
     
     @NotNull @NotEmpty 
     @Column(name="picture", unique = true, nullable = false)
