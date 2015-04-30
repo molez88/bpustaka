@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS member (
   country VARCHAR(50) NULL,
   email VARCHAR(45) NULL,
   mobileno VARCHAR(45) NULL,
-  dateofbirth VARCHAR(45) NULL,
+  dateofbirth Date NULL,
   picture VARCHAR(45) NULL,
   status VARCHAR(45) NULL,
   PRIMARY KEY (iduser))
