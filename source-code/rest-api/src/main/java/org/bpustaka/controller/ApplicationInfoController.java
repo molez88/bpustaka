@@ -1,7 +1,7 @@
 package org.bpustaka.controller;
 
 import org.bpustaka.entity.ApplicationInfo;
-import org.bpustaka.entity.dao.ApplicationInfoDao;
+import org.bpustaka.repositories.applicationinfo.ApplicationInfoDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

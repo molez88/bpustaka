@@ -2,7 +2,7 @@
 package org.bpustaka.controller;
 
 import org.bpustaka.entity.MemberEntity;
-import org.bpustaka.entity.dao.MemberDao;
+import org.bpustaka.repositories.member.MemberDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,15 +1,12 @@
 package org.bpustaka.entity;
 
-import java.sql.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.sql.Date;
 
 @Entity @Table(name="member")
 public class MemberEntity {
@@ -58,10 +55,24 @@ public class MemberEntity {
     @NotNull @NotEmpty 
     @Column(name="picture", unique = true, nullable = false)
     private String picture;
-    
-     @NotNull @NotEmpty 
+
+    @NotNull @NotEmpty
     @Column(name="status", unique = true, nullable = false)
     private String status;
+
+    private Boolean active;
+
+    @ManyToOne
+    @JoinColumn(name="id_roles")
+    private Roles roles;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getIduser() {
         return iduser;
@@ -127,14 +138,6 @@ public class MemberEntity {
         this.mobile_no = mobile_no;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Date getDateofbirth() {
         return dateofbirth;
     }
@@ -142,7 +145,6 @@ public class MemberEntity {
     public void setDateofbirth(Date dateofbirth) {
         this.dateofbirth = dateofbirth;
     }
-
 
     public String getPicture() {
         return picture;
@@ -159,7 +161,20 @@ public class MemberEntity {
     public void setStatus(String status) {
         this.status = status;
     }
-   
-    
-    
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public Roles getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Roles roles) {
+        this.roles = roles;
+    }
 }

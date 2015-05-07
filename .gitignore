@@ -69,3 +69,8 @@ local.properties
  
 # PDT-specific
 .buildpath
+
+.idea
+source-code/.idea
+source-code/rest-api/bpustaka-rest-api.iml
+source-code/authorization-server/bpustaka-authorization-server.iml

@@ -53,8 +53,33 @@
             <version>2.4.1</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-security</artifactId>
+            <version>1.0.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>2.0.7.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+        </dependency>
     </dependencies>
-	
+
     <build>
         <plugins>
             <plugin>
@@ -82,7 +107,7 @@
                     <password>bpustaka</password>
                     <url>jdbc:mysql://localhost/bpustaka</url>
                     <locations>
-			<location>classpath:db/migration/mysql</location>
+			            <location>classpath:db/migration/mysql</location>
                     </locations>
                 </configuration>
             </plugin>

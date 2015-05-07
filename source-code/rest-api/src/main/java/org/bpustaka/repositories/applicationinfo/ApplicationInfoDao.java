@@ -1,4 +1,4 @@
-package org.bpustaka.entity.dao;
+package org.bpustaka.repositories.applicationinfo;
 
 import org.bpustaka.entity.ApplicationInfo;
 import org.springframework.data.repository.PagingAndSortingRepository;
